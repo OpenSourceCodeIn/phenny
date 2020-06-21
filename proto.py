@@ -24,6 +24,9 @@ def join(self, channels, keys=None):
 def nick(self, nickname):
     self.write(('NICK', nickname))
 
+def invite(self, channel, nick):
+    self.write(('INVITE', nick, channel))
+
 def notice(self, msgtarget, message):
     self.write(('NOTICE', msgtarget), message)
 
